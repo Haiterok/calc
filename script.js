@@ -30,5 +30,4 @@ const count = () => {
     } catch (err) {
         screen.value = 'Error'
     }
-
 }
