@@ -1,58 +1,34 @@
-const screen = document.getElementById("screen");
-
-let lastNumber;
-let lastOperator;
+const screen = document.getElementById("screen")
 
 const addToScreen = (input) => {
-    if(screen.value === '0'){
-        screen.value = '';
+    if(screen.value === '0' || screen.value === 'Error') {
+        screen.value = ''
     }
-
-    screen.value += input;
+    screen.value += input
 }
 
-const manipulateNumbers = (input) => {
-    lastNumber = Number(screen.value);
-    screen.value = ' ';
-    lastOperator = input;
+const addDot = () => {
+    if (!screen.value.includes('.')) {
+        screen.value += '.'
+    }
+}
+
+const clearScreen = () => {
+    screen.value = ''
 }
 
 const count = () => {
-    try{
-        let number = Number(screen.value);
-
-        if (screen.value === "") {
-            screen.value = "0";
+    try {
+        if (screen.value === "Error") {
+            screen.value = ''
+        }else{
+            screen.value = eval(screen.value)
         }
-        if (lastOperator === "") {
-            screen.value = "0";
+        if (screen.value === 'Infinity' || screen.value === 'undefined') {
+            screen.value = 'Error'
         }
-
-        if (lastOperator !== Number) {
-            screen.value = "0";
-        }
-
-        switch (lastOperator) {
-            case "+":
-                screen.value = lastNumber + number;
-                break;
-            case "-":
-                screen.value = lastNumber - number;
-                break;
-            case "*":
-                screen.value = lastNumber * number;
-                break;
-            case "/":
-                screen.value = lastNumber / number;
-                break;
-            default:
-                screen.value = "0";
-                break;
-        }
-
-        lastNumber = undefined;
-    }catch(err){
-        screen.value = '';
+    } catch (err) {
+        screen.value = 'Error'
     }
 
 }

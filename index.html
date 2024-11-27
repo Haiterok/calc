@@ -17,29 +17,29 @@
       <input type="button" value="1" onclick="addToScreen(1)" class="btn">
       <input type="button" value="2" onclick="addToScreen(2)" class="btn">
       <input type="button" value="3" onclick="addToScreen(3)" class="btn">
-      <input type="button" value="+" onclick="manipulateNumbers('+')" class="btn">
+      <input type="button" value="+" onclick="addToScreen('+')" class="btn">
     </div>
     <div class="line">
       <input type="button" value="4" onclick="addToScreen(4)" class="btn">
       <input type="button" value="5" onclick="addToScreen(5)" class="btn">
       <input type="button" value="6" onclick="addToScreen(6)" class="btn">
-      <input type="button" value="-" onclick="manipulateNumbers('-')" class="btn">
+      <input type="button" value="-" onclick="addToScreen('-')" class="btn">
     </div>
     <div class="line">
       <input type="button" value="7" onclick="addToScreen(7)" class="btn">
       <input type="button" value="8" onclick="addToScreen(8)" class="btn">
       <input type="button" value="9" onclick="addToScreen(9)" class="btn">
-      <input type="button" value="/" onclick="manipulateNumbers('/')" class="btn">
+      <input type="button" value="/" onclick="addToScreen('/')" class="btn">
     </div>
     <div class="line">
-      <input type="button" value="." onclick="addToScreen('.')" class="btn">
+      <input type="button" value="." onclick="addDot()" class="btn">
       <input type="button" value="0" onclick="addToScreen(0)" class="btn">
-      <input type="button" value="*" onclick="manipulateNumbers('*')" class="btn">
+      <input type="button" value="*" onclick="addToScreen('*')" class="btn">
       <input type="button" value="=" onclick="count()" class="btn">
     </div>
   </div>
 
-  <button type="button">clear</button>
+  <button type="button" onclick="clearScreen()">clear</button>
 </main>
 </body>
 </html>
