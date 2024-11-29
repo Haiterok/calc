@@ -1,78 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+:root{
+    --OutputColor: #640D14;
+    --SecondaryButtonColor:#250902;
+    --PrimaryButtonColor: #38040E;
+    --TextColor: #ffffff;
+    --HoverButtonColor: #800E13;
+    --Memory: #AD2831;
+}
+
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: x-large;
+    box-sizing: border-box;
+    font-family: 'Funnel Display', sans-serif;
+    color: var(--TextColor);
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
 main{
-    background-color: #030303;
     height: 100%;
-    border-radius: 10px;
-    max-height: 667px;
-    max-width: 375px;
-    width: 100%;
 }
 
-.upper-half{
-    float: left;
+#screen{
+    width: 100%;
     height: 25%;
-    width: 100%;
-}
-
-.upper-half input{
-    width: 100%;
-    height: 100%;
+    background-color: var(--OutputColor);
     border: none;
     outline: none;
-    color: wheat;
-    background-color: #0f0f0f;
     text-align: right;
-    padding: 0 15px;
-    border-radius: 10px;
+    padding-right: 1em;
+    font-size: xxx-large;
 }
 
-.bottom-half{
-    float: left;
-    width: 100%;
+.first-layer{
+    display: flex;
     height: 75%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-.line{
-    flex: 1;
-    width: 100%;
+.second-layer{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 80%;
+    height: 100%;
 }
 
-.line input{
-    flex: 1;
-    margin: 5px;
-    aspect-ratio: 1 / 1;
+.memory{
+    width: 20%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.numbers{
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.operators{
+    width: 20%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+input[type=button]{
     border: none;
     outline: none;
-    background-color: orange;
-    border-radius: 100%;
+    font-size: x-large;
+    background-color: var(--SecondaryButtonColor);
 }
 
-input[value="="]{
-    background-color: white;
+.memory input[type=button]{
+    background-color: var(--PrimaryButtonColor);
 }
 
-button{
-    position: absolute;
-    bottom: 0;
-    right: 45%;
+
+input[type=button]:hover{
+    cursor: pointer;
+    background-color: var(--HoverButtonColor);
+    transition: 0.3s ease;
+}
+
+@media (max-width: 500px) {
+    .first-layer{
+        flex-direction: column;
+    }
+
+    .memory{
+        width: 100%;
+        height: 10%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .special[type="button"]{
+        background-color: var(--PrimaryButtonColor);
+    }
+
+    .second-layer{
+        width: 100%;
+    }
 }
