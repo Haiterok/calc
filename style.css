@@ -89,6 +89,16 @@ input[type=button]:hover{
     transition: 0.3s ease;
 }
 
+#memoryDisplay{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--PrimaryButtonColor);
+    font-size: large;
+    font-weight: 900;
+    display: none;
+}
+
 @media (max-width: 500px) {
     .first-layer{
         flex-direction: column;
